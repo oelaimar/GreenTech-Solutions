@@ -26,4 +26,9 @@ class CatalogController extends Controller
         return view('catalog.index', compact('products', 'categories'));
     }
 
+    public function show(Product $product)
+    {
+        return view('catalog.show', compact('product'));
+    }
+
 }

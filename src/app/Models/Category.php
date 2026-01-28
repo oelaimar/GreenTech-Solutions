@@ -10,4 +10,9 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function show(Product $product)
+    {
+        return view('catalog.show', compact('product'));
+    }
 }

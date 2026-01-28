@@ -23,7 +23,9 @@
 
 @foreach($products as $product)
     <div style="margin-bottom: 10px;">
-        <strong>{{ $product->name }}</strong><br>
+        <a href="{{ route('catalog.show', $product) }}">
+            <strong>{{ $product->name }}</strong>
+        </a><br>
         Category: {{ $product->category->name }}<br>
         Price: ${{ $product->price }}
     </div>
