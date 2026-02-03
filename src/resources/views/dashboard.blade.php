@@ -1,4 +1,3 @@
-<x-admin-layout>
     <!-- Page Heading -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -44,7 +43,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Recent Activity -->
     <div class="bg-white dark:bg-[#1a2e1a] p-6 rounded-xl border border-[#dce5dc] dark:border-white/10 shadow-sm">
         <h3 class="text-lg font-bold mb-4">Recent Products Added</h3>
@@ -67,4 +66,3 @@
             @endforelse
         </div>
     </div>
-</x-admin-layout>
