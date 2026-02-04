@@ -42,7 +42,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="w-full py-2 px-4 bg-green-700 hover:bg-green-500 text-white rounded-md">
+            <button type="submit" class="w-full py-2 px-4 bg-green-500 hover:bg-green-300 text-white rounded-md">
                 login
             </button>
 

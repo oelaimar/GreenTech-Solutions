@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('title', 'category')
+
+@section('aside')
+    <!-- Sidebar Navigation -->
+@endsection
 @section('content')
-<div class="px-4 md:px-10 lg:px-40 py-8">
     <!-- PageHeading -->
+<div class="px-4 md:px-10 lg:px-40 py-8">
     <div class="flex flex-wrap justify-between items-end gap-3 mb-8">
         <div class="flex min-w-72 flex-col gap-2">
             <p class="text-[#111811] dark:text-white text-5xl font-black leading-tight tracking-[-0.033em]">Public Plant Catalog</p>
@@ -64,28 +68,6 @@
 
     <div class="mt-12">
         {{ $products->links() }}
-    </div>
-
-    <!-- Bottom Sustainability Banner -->
-    <div class="flex flex-col md:flex-row justify-between items-center gap-8 py-12 border-t border-[#e0e8e0] dark:border-[#223322] mt-16">
-        <div class="flex flex-col gap-2 max-w-lg">
-            <h4 class="text-2xl font-black text-[#112111] dark:text-white">Grown with Care, Delivered with Love</h4>
-            <p class="text-[#4a6b4a] dark:text-[#88a388]">Every plant in our catalog is sourced from eco-certified nurseries using zero-plastic packaging and sustainable carbon-neutral logistics.</p>
-        </div>
-        <div class="flex gap-4 flex-wrap justify-center">
-            <div class="flex flex-col items-center gap-1 bg-white dark:bg-[#1a2e1a] p-4 rounded-xl min-w-32 border border-[#e0e8e0] dark:border-[#223322]">
-                <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-[#111811] dark:text-white">Carbon Neutral</span>
-            </div>
-            <div class="flex flex-col items-center gap-1 bg-white dark:bg-[#1a2e1a] p-4 rounded-xl min-w-32 border border-[#e0e8e0] dark:border-[#223322]">
-                <span class="material-symbols-outlined text-primary text-3xl">recycling</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-[#111811] dark:text-white">Plastic Free</span>
-            </div>
-            <div class="flex flex-col items-center gap-1 bg-white dark:bg-[#1a2e1a] p-4 rounded-xl min-w-32 border border-[#e0e8e0] dark:border-[#223322]">
-                <span class="material-symbols-outlined text-primary text-3xl">water_drop</span>
-                <span class="text-xs font-bold uppercase tracking-widest text-[#111811] dark:text-white">Eco-Nurseries</span>
-            </div>
-        </div>
     </div>
 </div>
 

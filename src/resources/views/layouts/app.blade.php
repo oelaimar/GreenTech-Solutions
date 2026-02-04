@@ -42,60 +42,59 @@
     <title>@yield('title')</title>
 </head>
 <body class="bg-background-light font-display min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
-<div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-primary/5 organic-shape -z-10"></div>
-<div class="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 organic-shape -z-10"></div>
+<div class="flex h-screen overflow-hidden">
     @hasSection('aside')
         <!-- Sidebar Navigation -->
         <aside class="w-64 flex-shrink-0 border-r border-[#dce5dc] dark:border-[#2a3a2a] bg-white dark:bg-[#1a2a1a] flex flex-col h-full">
             <div class="p-6">
                 <div class="flex items-center gap-3">
                     <div class="text-primary">
-                        <span class="material-symbols-outlined text-4xl">eco</span>
+                        <box-icon name='leaf' type='solid' color="currentColor" class="text-primary"></box-icon>
                     </div>
                     <div>
-                        <h1 class="text-[#111811] dark:text-white text-lg font-bold leading-tight">EcoShop</h1>
+                        <h1 class="text-[#111811] dark:text-white text-lg font-bold leading-tight">GreenTech</h1>
                         <p class="text-[#638863] text-xs font-medium">Admin Dashboard</p>
                     </div>
                 </div>
             </div>
             <nav class="flex-1 px-4 space-y-1">
                 <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium" href="#">
-                    <span class="material-symbols-outlined">dashboard</span>
+                    <box-icon name='dashboard' type='solid' color="currentColor" class="text-primary"></box-icon>
                     <span class="text-sm">Dashboard</span>
                 </a>
                 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#638863] hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors" href="#">
-                    <span class="material-symbols-outlined">potted_plant</span>
+                    <box-icon type='solid' name='book-content' color="currentColor" class="text-primary"></box-icon>
                     <span class="text-sm">Product Catalog</span>
                 </a>
                 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#638863] hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors" href="#">
-                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <box-icon type='solid' name='cart' color="currentColor" class="text-primary"></box-icon>
                     <span class="text-sm">Order Management</span>
                 </a>
                 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#638863] hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors" href="#">
-                    <span class="material-symbols-outlined">monitoring</span>
-                    <span class="text-sm">Sustainability</span>
+                    <box-icon name='heart' type='solid' color="currentColor" class="text-primary"></box-icon>
+                    <span class="text-sm">Favorite</span>
                 </a>
                 <div class="pt-4 pb-2 px-3 text-[10px] uppercase tracking-wider text-[#638863]/60 font-bold">Preferences</div>
                 <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#638863] hover:bg-background-light dark:hover:bg-background-dark/50 transition-colors" href="#">
-                    <span class="material-symbols-outlined">settings</span>
+                    <box-icon name='cog' type='solid' color="currentColor" class="text-primary"></box-icon>
                     <span class="text-sm">Settings</span>
                 </a>
             </nav>
-            <div class="p-4 border-t border-[#dce5dc] dark:border-[#2a3a2a]">
+            <div class="p-4 border-t border-[#dce5dc] dark:border-[#2a3a2a] flex items-center justify-center flex-col">
                 <button class="w-full flex items-center justify-center gap-2 bg-primary text-[#112111] py-2.5 rounded-lg font-bold text-sm shadow-sm hover:opacity-90 transition-opacity">
                     <span class="material-symbols-outlined text-lg">add</span>
                     New Product
                 </button>
-                <div class="mt-4 flex items-center gap-3 px-3 py-2 text-[#638863] cursor-pointer hover:text-red-500 transition-colors">
-                    <span class="material-symbols-outlined">logout</span>
-                    <span class="text-sm font-medium">Logout</span>
-                </div>
+                <form action="{{ route('logout') }}" method="POST" class="mt-4 flex items-center gap-3 px-3 py-2 text-[#638863] cursor-pointer hover:text-red-500 transition-colors">
+                    <button type="submit" class="w-full flex items-center justify-center gap-2 bg-red-200 text-[#112111] py-2.5 rounded-lg font-bold text-xs shadow-sm hover:opacity-90 transition-opacity">
+                        <span class="text-sm font-medium px-4">Logout</span>
+                    </button>
+                </form>
             </div>
         </aside>
     @endif
-    <div>
-        @yield('content')
-    </div>
+    @yield('content')
+</div>
     @yield('scripts')
 </body>
 </html>
