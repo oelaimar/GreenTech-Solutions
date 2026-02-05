@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('title', 'create product')
+
+@section('content')
 <div class="max-w-2xl mx-auto">
     <!-- Page Heading -->
     <div class="mb-8">
@@ -8,7 +13,7 @@
     <div class="bg-white dark:bg-[#1a2e1a] rounded-xl border border-[#dce5dc] dark:border-white/10 shadow-sm overflow-hidden p-8">
         <form action="{{ route('products.store') }}" method="POST" class="space-y-6">
             @csrf
-            
+
             <div class="space-y-2">
                 <label class="text-sm font-bold text-[#111811] dark:text-white">Product Name</label>
                 <input type="text" name="name" class="w-full bg-[#f0f4f0] dark:bg-white/5 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 text-[#111811] dark:text-white placeholder-[#638863]" placeholder="e.g. Monstera Deliciosa">
@@ -22,7 +27,7 @@
                     <label class="text-sm font-bold text-[#111811] dark:text-white">Price ($)</label>
                     <input type="number" step="0.01" name="price" class="w-full bg-[#f0f4f0] dark:bg-white/5 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 text-[#111811] dark:text-white" placeholder="0.00">
                 </div>
-                
+
                 <div class="space-y-2">
                     <label class="text-sm font-bold text-[#111811] dark:text-white">Stock Level</label>
                     <input type="number" name="stock" class="w-full bg-[#f0f4f0] dark:bg-white/5 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 text-[#111811] dark:text-white" placeholder="0">
@@ -46,3 +51,4 @@
         </form>
     </div>
 </div>
+@endsection

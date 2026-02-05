@@ -42,8 +42,8 @@
     <title>@yield('title')</title>
 </head>
 <body class="bg-background-light font-display min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
-<div class="flex h-screen overflow-hidden">
     @hasSection('aside')
+<div class="flex h-screen overflow-hidden">
         <!-- Sidebar Navigation -->
         <aside class="w-64 flex-shrink-0 border-r border-[#dce5dc] dark:border-[#2a3a2a] bg-white dark:bg-[#1a2a1a] flex flex-col h-full">
             <div class="p-6">
@@ -86,6 +86,7 @@
                     New Product
                 </button>
                 <form action="{{ route('logout') }}" method="POST" class="mt-4 flex items-center gap-3 px-3 py-2 text-[#638863] cursor-pointer hover:text-red-500 transition-colors">
+                    @csrf
                     <button type="submit" class="w-full flex items-center justify-center gap-2 bg-red-200 text-[#112111] py-2.5 rounded-lg font-bold text-xs shadow-sm hover:opacity-90 transition-opacity">
                         <span class="text-sm font-medium px-4">Logout</span>
                     </button>

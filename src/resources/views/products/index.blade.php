@@ -1,17 +1,26 @@
+@extends('layouts.app')
+
+@section('title', 'create product')
+
+    @section('aside')
+        <!-- Sidebar Navigation -->
+    @endsection
+@section('content')
     <!-- Page Heading -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-        <div>
-            <h2 class="text-3xl font-black tracking-tight">Products</h2>
-            <p class="text-[#638863] dark:text-[#a3b8a3] mt-1 font-medium">Manage your sustainable inventory.</p>
-        </div>
-        <a href="{{ route('products.create') }}" class="bg-primary hover:bg-primary/90 text-background-dark px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all">
-            <span class="material-symbols-outlined">add_circle</span>
-            Add New Plant
-        </a>
-    </div>
+
 
     <!-- Product Table Container -->
     <div class="bg-white dark:bg-[#1a2e1a] rounded-xl border border-[#dce5dc] dark:border-white/10 shadow-sm overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div>
+                <h2 class="text-3xl font-black tracking-tight">Products</h2>
+                <p class="text-[#638863] dark:text-[#a3b8a3] mt-1 font-medium">Manage your sustainable inventory.</p>
+            </div>
+            <a href="{{ route('products.create') }}" class="bg-primary hover:bg-primary/90 text-background-dark px-6 py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all">
+                <span class="material-symbols-outlined">add_circle</span>
+                Add New Plant
+            </a>
+        </div>
         <!-- Table -->
         <div class="overflow-x-auto">
             <table class="w-full text-left border-collapse">
@@ -55,9 +64,10 @@
                 </tbody>
             </table>
         </div>
-        
+
         <!-- Pagination -->
         <div class="px-6 py-4 border-t border-[#dce5dc] dark:border-white/10">
             {{ $products->links() }}
         </div>
     </div>
+    @endsection

@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@section('title', 'create product')
+
+@section('content')
+
 <div class="max-w-2xl mx-auto">
     <!-- Page Heading -->
     <div class="mb-8">
@@ -9,7 +15,7 @@
         <form action="{{ route('products.update', $product->id) }}" method="POST" class="space-y-6">
             @csrf
             @method('PUT')
-            
+
             <div class="space-y-2">
                 <label class="text-sm font-bold text-[#111811] dark:text-white">Product Name</label>
                 <input type="text" name="name" value="{{ $product->name }}" class="w-full bg-[#f0f4f0] dark:bg-white/5 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 text-[#111811] dark:text-white placeholder-[#638863]">
@@ -23,7 +29,7 @@
                     <label class="text-sm font-bold text-[#111811] dark:text-white">Price ($)</label>
                     <input type="number" step="0.01" name="price" value="{{ $product->price }}" class="w-full bg-[#f0f4f0] dark:bg-white/5 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 text-[#111811] dark:text-white">
                 </div>
-                
+
                 <div class="space-y-2">
                     <label class="text-sm font-bold text-[#111811] dark:text-white">Stock Level</label>
                     <input type="number" name="stock" value="{{ $product->stock }}" class="w-full bg-[#f0f4f0] dark:bg-white/5 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/50 text-[#111811] dark:text-white">
@@ -46,3 +52,4 @@
         </form>
     </div>
 </div>
+@endsection

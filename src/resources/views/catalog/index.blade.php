@@ -42,11 +42,6 @@
         @foreach($products as $product)
             <!-- Plant Card -->
             <div class="flex flex-col gap-4 bg-white dark:bg-[#1a2e1a] p-4 rounded-xl border border-[#e0e8e0] dark:border-[#223322] shadow-sm hover:shadow-md transition-shadow group duration-300">
-                <div class="relative w-full overflow-hidden rounded-lg">
-                    <div class="absolute top-3 left-3 bg-white/90 dark:bg-black/70 backdrop-blur px-3 py-1 rounded-full shadow-sm">
-                        <span class="text-[10px] uppercase font-bold tracking-wider text-[#111811] dark:text-white">{{ $product->category ? $product->category->name : 'Uncategorized' }}</span>
-                    </div>
-                </div>
                 <div class="flex flex-col flex-grow">
                     <div class="flex justify-between items-start mb-1">
                         <h3 class="text-[#111811] dark:text-white text-lg font-bold leading-tight line-clamp-1 hover:text-primary transition-colors">
@@ -54,12 +49,17 @@
                         </h3>
                         <p class="text-primary font-bold text-lg">${{ number_format($product->price, 2) }}</p>
                     </div>
-                    <p class="text-[#638863] dark:text-[#a3bba3] text-sm font-normal mb-4 line-clamp-2">Sustainably sourced, perfect for your home.</p>
+                    <p class="text-[#638863] dark:text-[#a3bba3] text-sm font-normal mb-4 line-clamp-2">{{ $product->description }}</p>
 
-                    <div class="mt-auto">
+                    <div class="mt-auto flex justify-center gap-4">
                         <button class="w-full bg-primary text-[#112111] font-bold py-2.5 rounded-lg text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-lg">add_shopping_cart</span> Add to Cart
+                            <box-icon name='cart' type='solid' color="currentColor" class="text-white"></box-icon> Add to Cart
                         </button>
+                        <form action="" method="POST">
+                            <button>
+                                <box-icon name='heart' type='solid' color="currentColor" class="text-gray-500"></box-icon>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
