@@ -11,9 +11,17 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('category')->paginate(10);
+        $query = Product::with('category');
+
+        if ($request->has('favorites')) {
+            $query->whereHas('users', function ($q) {
+                $q->where('user_id', auth()->id());
+            });
+        }
+
+        $products = $query->paginate(10);
         return view('products.index', compact('products'));
     }
 

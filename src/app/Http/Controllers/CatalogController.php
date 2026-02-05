@@ -20,6 +20,11 @@ class CatalogController extends Controller
             ->when($request->q, function ($query) use ($request) {
                 $query->where('name', 'like', '%' . $request->q . '%');
             })
+            ->when($request->has('favorites'), function ($query) {
+                $query->whereHas('users', function ($q) {
+                    $q->where('user_id', auth()->id());
+                });
+            })
             ->paginate(9)
             ->withQueryString();
 

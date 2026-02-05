@@ -8,9 +8,7 @@
         <div class="mb-10 text-center">
             <div class="flex flex-col items-center gap-3 justify-center mb-6">
                 <box-icon type='solid' name='leaf' color="currentColor" class="text-green-700 w-12 h-12"></box-icon>
-                <div class="text-primary">
-                    <span class="material-symbols-outlined text-4xl">GreenTech</span>
-                </div>
+
             </div>
             <h2 class="text-2xl font-bold text-[#111811]">Welcome Back</h2>
             <p class="text-[#638863] mt-2">Please enter your details to login.</p>

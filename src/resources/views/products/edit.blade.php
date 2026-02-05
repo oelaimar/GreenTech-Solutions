@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'create product')
+@section('title', 'edit product')
+
+@section('aside')
+    <!-- Sidebar Navigation -->
+@endsection
 
 @section('content')
 

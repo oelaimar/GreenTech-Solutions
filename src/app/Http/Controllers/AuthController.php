@@ -32,7 +32,10 @@ class AuthController extends Controller
 
         if(Auth::attempt($request->only('email', 'password'))){
             $request->session()->regenerate();
-            return redirect()->route('dashboard');
+            if(auth()->user()->role === 'admin') {
+                return redirect()->route('dashboard');
+            }
+            return redirect()->route('catalog.index');
         }
         return back()->withErrors(['email' => 'Email or password is wrong']);
     }

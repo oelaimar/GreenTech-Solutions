@@ -14,21 +14,18 @@ Route::get('/register', [AuthController::class, 'showSignUp'])->name('register')
 Route::post('/register', [AuthController::class, 'signUp'])->name('registration.register');
 
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit')->middleware('auth');
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-
-Route::get('/products/{product}', [CatalogController::class, 'show'])->name('catalog.show');
 
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-Route::post('/favorite/{product}', [FavoriteController::class, 'toggle'])->middleware('auth');
+Route::post('/favorite/{product}', [FavoriteController::class, 'toggle'])->name('favorite.toggle')->middleware('auth');
 
 Route::middleware(['auth', 'admin'])->group(function(){
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
@@ -37,3 +34,5 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
+
+Route::get('/products/{product}', [CatalogController::class, 'show'])->name('catalog.show');

@@ -2,6 +2,10 @@
 
 @section('title', 'create product')
 
+@section('aside')
+    <!-- Sidebar Navigation -->
+@endsection
+
 @section('content')
 <div class="max-w-2xl mx-auto">
     <!-- Page Heading -->
